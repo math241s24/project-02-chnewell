@@ -12,4 +12,8 @@ execute:
 
 ## Abstract
 
+I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings.
+
 ## Introduction
+
+The MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated.

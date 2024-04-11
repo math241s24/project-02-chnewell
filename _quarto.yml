@@ -6,7 +6,7 @@ website:
   navbar:
     right:
       - icon: github
-        href: https://github.com/math241s24/project-02
+        href: https://github.com/math241s24/project-02-chnewell
     left:
       - text: Project
         href: index.qmd

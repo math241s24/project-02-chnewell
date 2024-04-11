@@ -32,16 +32,21 @@ glimpse(mtg_rules)
 
 ```
 
-## Reason for Choosing this Dataset
+The data set is the official text document of the MTG rules, published by WOTC.
 
-The MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated.
+## Reason for Choosing this Dataset
 
 I want to make this tool for two main reasons. The first reason is that I’m curious about what patterns might emerge. The second reason is that I am looking for a framework to help develop a method of learning the game. For example, if mechanic A and mechanic B are correlated, and mechanic B and mechanic C are correlated, but A and C are not, then it stands to reason that learning mechanic A or C before mechanic B might make learning the game easier.
 
 ## Questions and Analysis Plan
 
-I plan to do stuff lmao.
+As with any project, I plan to do stuff to make things. This is meant to become an interactive tool. However, the guiding question that drives this is asking: Are there any patterns to be gleaned from the structure of the rules that might offer new insights about the game?
 
-1.  Look at the patterns in the words.
-2.  Make some visulizations & interactable things.
-3.  Get some data on the actual MTG cards if I can learn to read JSON.
+The plan to complete this is to use the tidyverse, tidyr, and tidytext packages to structure and analyze the data, and then to use the shiny package to implement the application and widgets that will allow for modular input on searching.
+
+The project plan is broken up into three parts:
+
+1.  Tidy the data.
+2.  Create visualizations and widgets.
+3.  Clean up bugs and organize findings, as well as present the app.
+4.  If I can figure out how JSON files work, potentially add in a data set containing the actual MTG cards.

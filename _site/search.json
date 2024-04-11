@@ -4,48 +4,55 @@
     "href": "proposal.html",
     "title": "Project 2",
     "section": "",
-    "text": "library(tidyverse)"
+    "text": "mtg_rules_url &lt;- \"https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt\"\nmtg_rules &lt;- RCurl::getURL(mtg_rules_url) %&gt;% str_split(\"\\r\\n\") %&gt;%\n  pluck(1)\nglimpse(mtg_rules)\n\n chr [1:13] \"ï»¿Magic: The Gathering Comprehensive Rules\\r\\rThese rules are effective as of March 8, 2024.\\r\\rIntroduction\\r\"| __truncated__ ...\n\n\nThe data set is the official text document of the MTG rules, published by WOTC."
   },
   {
     "objectID": "proposal.html#dataset",
     "href": "proposal.html#dataset",
     "title": "Project 2",
-    "section": "Dataset",
-    "text": "Dataset\n\n## read data"
+    "section": "",
+    "text": "mtg_rules_url &lt;- \"https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt\"\nmtg_rules &lt;- RCurl::getURL(mtg_rules_url) %&gt;% str_split(\"\\r\\n\") %&gt;%\n  pluck(1)\nglimpse(mtg_rules)\n\n chr [1:13] \"ï»¿Magic: The Gathering Comprehensive Rules\\r\\rThese rules are effective as of March 8, 2024.\\r\\rIntroduction\\r\"| __truncated__ ...\n\n\nThe data set is the official text document of the MTG rules, published by WOTC."
   },
   {
     "objectID": "proposal.html#reason-for-choosing-this-dataset",
     "href": "proposal.html#reason-for-choosing-this-dataset",
     "title": "Project 2",
     "section": "Reason for Choosing this Dataset",
-    "text": "Reason for Choosing this Dataset"
+    "text": "Reason for Choosing this Dataset\nI want to make this tool for two main reasons. The first reason is that I’m curious about what patterns might emerge. The second reason is that I am looking for a framework to help develop a method of learning the game. For example, if mechanic A and mechanic B are correlated, and mechanic B and mechanic C are correlated, but A and C are not, then it stands to reason that learning mechanic A or C before mechanic B might make learning the game easier."
   },
   {
     "objectID": "proposal.html#questions-and-analysis-plan",
     "href": "proposal.html#questions-and-analysis-plan",
     "title": "Project 2",
     "section": "Questions and Analysis Plan",
-    "text": "Questions and Analysis Plan"
+    "text": "Questions and Analysis Plan\nAs with any project, I plan to do stuff to make things. This is meant to become an interactive tool. However, the guiding question that drives this is asking: Are there any patterns to be gleaned from the structure of the rules that might offer new insights about the game?\nThe plan to complete this is to use the tidyverse, tidyr, and tidytext packages to structure and analyze the data, and then to use the shiny package to implement the application and widgets that will allow for modular input on searching.\nThe project plan is broken up into three parts:\n\nTidy the data.\nCreate visualizations and widgets.\nClean up bugs and organize findings, as well as present the app.\nIf I can figure out how JSON files work, potentially add in a data set containing the actual MTG cards."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Your project title",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
     "section": "",
-    "text": "This project was developed by XX. For MATH/STAT241 at Reed College. The team is comprised of the following team members."
+    "text": "This project was developed by XX, for MATH/STAT241 at Reed College. The team is comprised of the following team members:\nChristopher Newell"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "project-02",
+    "title": "",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings."
   },
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
     "title": "",
     "section": "Introduction",
-    "text": "Introduction"
+    "text": "Introduction\nThe MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "",
+    "section": "",
+    "text": "I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings."
   }
 ]
