@@ -1,7 +1,7 @@
 {
-  "hash": "91dfba8d309ed6929d5d19ac72bc2361",
+  "hash": "290c4e50aa100847371b37d31de525c9",
   "result": {
-    "markdown": "---\ntitle: \"An Analysis of MTG's Comprehensive Rulebook\"\nsubtitle: \"Project 2\"\nauthor: \"Christopher\"\ntitle-slide-attributes:\n  data-slide-number: none\nformat: revealjs\neditor: visual\nexecute:\n  echo: false\n---\n\n\n\n\n\n\n",
+    "markdown": "---\ntitle: \"An Analysis of MTG's Comprehensive Rulebook\"\nsubtitle: \"Project 2\"\nauthor: \"Christopher\"\ntitle-slide-attributes:\n  data-slide-number: none\nformat: revealjs\neditor: visual\nexecute:\n  echo: false\n---\n\n\n\n\n\n\n\n\n## Testing Data Scraping {.smaller}\ntest testing test\n\n::: {layout-ncol=2}\n\n![Test Image](img/download_1)\n\n:::\n\n## Testing the App\n::: incremental\n1. test\n2. three\n:::\n\n::: {notes}\n\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

@@ -34,4 +34,25 @@ knitr::opts_chunk$set(
 ```{r}
 #| label: load-data
 #| include: false
+#| warining: false
+#| echo: false
 ```
+
+## Testing Data Scraping {.smaller}
+test testing test
+
+::: {layout-ncol=2}
+
+![Test Image](img/download_1)
+
+:::
+
+## Testing the App
+::: incremental
+1. test
+2. three
+:::
+
+::: {notes}
+
+:::

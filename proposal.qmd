@@ -17,6 +17,9 @@ library(knitr)
 library(janeaustenr) 
 library(dplyr)
 library(RCurl)
+library(htm2txt)
+library(stringr)
+
 ```
 
 ## Dataset
@@ -33,6 +36,18 @@ glimpse(mtg_rules)
 ```
 
 The data set is the official text document of the MTG rules, published by WOTC.
+
+```{r}
+url <- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'
+mtgtext <- gettxt(url)
+mtgtext <- str_split(mtgtext[1], "\\s+") %>% pluck(1)
+
+mtg_df <- as.data.frame(mtgtext)
+names(mtg_df) <- "Words"
+
+ggplot(mtg_df, aes(x = Words)) + geom_bar()
+
+```
 
 ## Reason for Choosing this Dataset
 
