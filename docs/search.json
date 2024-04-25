@@ -54,5 +54,96 @@
     "title": "Project 2",
     "section": "Introduction",
     "text": "Introduction\nThe MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated."
+  },
+  {
+    "objectID": "presentation.html#main-research-question",
+    "href": "presentation.html#main-research-question",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Main Research Question",
+    "text": "Main Research Question\n\nuh\nhi"
+  },
+  {
+    "objectID": "presentation.html#testing-data-scraping",
+    "href": "presentation.html#testing-data-scraping",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Testing Data Scraping",
+    "text": "Testing Data Scraping\ntest testing test\n\n\nTest Image"
+  },
+  {
+    "objectID": "presentation.html#testing-the-app",
+    "href": "presentation.html#testing-the-app",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Testing the App",
+    "text": "Testing the App"
+  },
+  {
+    "objectID": "presentation.html#topic-of-research",
+    "href": "presentation.html#topic-of-research",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Topic of Research",
+    "text": "Topic of Research\nThe goal of my project is to make an application visualizing quantity and correlation through an interactive search method for the MTG rulings. Once a keyword is chosen, the app will give:\n\n\nA list of sections in the rules that the keyword resides.\nA graph of the top 50 keywords close in proximity to the searched keyword."
+  },
+  {
+    "objectID": "presentation.html#what-is-mtg",
+    "href": "presentation.html#what-is-mtg",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "What is MTG?",
+    "text": "What is MTG?\nMagic the Gathering is a children’s card game. You play cards according to costs in order to win.\n\n\n\n\nMTG Card"
+  },
+  {
+    "objectID": "presentation.html#what-is-mtg-1",
+    "href": "presentation.html#what-is-mtg-1",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "What is MTG?",
+    "text": "What is MTG?\nMagic the Gathering is a children’s card game. You play cards according to costs in order to win.\n\n\n\n\nStorm Crow"
+  },
+  {
+    "objectID": "presentation.html#what-is-mtg-2",
+    "href": "presentation.html#what-is-mtg-2",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "What is MTG?",
+    "text": "What is MTG?\nIn order to conserve text space, rules in the game have keywords. All of these keywords are defined in the official rules book.\n\n\n\n\n\n\nStorm Crow\n\n\n\n\n\n\n\nStorm Crow"
+  },
+  {
+    "objectID": "presentation.html#problem",
+    "href": "presentation.html#problem",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Problem",
+    "text": "Problem\nThe MTG rulebook is about 250 pages.\n\nMTG RulebookSo, what can be done?"
+  },
+  {
+    "objectID": "presentation.html#keywords",
+    "href": "presentation.html#keywords",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Keywords",
+    "text": "Keywords\nIn order to conserve text space, rules in the game have keywords. All of these keywords are defined in the official rules book.\n\n\n\n\nStorm Crow"
+  },
+  {
+    "objectID": "presentation.html#the-data",
+    "href": "presentation.html#the-data",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "The Data",
+    "text": "The Data\nThe data consists of the scraped text from the official online rules.\n\nMTG Rules PDF"
+  },
+  {
+    "objectID": "presentation.html#the-data-1",
+    "href": "presentation.html#the-data-1",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "The Data",
+    "text": "The Data\nThe data consists of the scraped text from the official online rules.\n\nMTG Rules PDFData wrangling has included removing all the conjunctions (and similar sorts of words)."
+  },
+  {
+    "objectID": "presentation.html#variables",
+    "href": "presentation.html#variables",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Variables",
+    "text": "Variables\nAn observation in the dataset consists of a word, and its placement in the document.\n\n\nRows: 151,370\nColumns: 1\n$ Words &lt;chr&gt; \"Magic:\", \"The\", \"Gathering\", \"Comprehensive\", \"Rules\", \"These\",…"
+  },
+  {
+    "objectID": "presentation.html#results",
+    "href": "presentation.html#results",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Results",
+    "text": "Results\nhi"
   }
 ]
