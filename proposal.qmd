@@ -51,7 +51,7 @@ ggplot(mtg_df, aes(x = Words)) + geom_bar()
 
 ## Reason for Choosing this Dataset
 
-I want to make this tool for two main reasons. The first reason is that I’m curious about what patterns might emerge. The second reason is that I am looking for a framework to help develop a method of learning the game. For example, if mechanic A and mechanic B are correlated, and mechanic B and mechanic C are correlated, but A and C are not, then it stands to reason that learning mechanic A or C before mechanic B might make learning the game easier.
+I want to make this tool for two main reasons. The first reason is that I'm curious about what patterns might emerge. The second reason is that I am looking for a framework to help develop a method of learning the game. For example, if mechanic A and mechanic B are correlated, and mechanic B and mechanic C are correlated, but A and C are not, then it stands to reason that learning mechanic A or C before mechanic B might make learning the game easier.
 
 ## Questions and Analysis Plan
 
