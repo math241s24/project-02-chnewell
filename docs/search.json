@@ -67,7 +67,7 @@
     "href": "presentation.html#testing-data-scraping",
     "title": "An Analysis of MTG’s Comprehensive Rulebook",
     "section": "Testing Data Scraping",
-    "text": "Testing Data Scraping\ntest testing test\n\n\nTest Image"
+    "text": "Testing Data Scraping\n\n\nCorder Bollie Corder Bollie"
   },
   {
     "objectID": "presentation.html#testing-the-app",
@@ -137,13 +137,34 @@
     "href": "presentation.html#variables",
     "title": "An Analysis of MTG’s Comprehensive Rulebook",
     "section": "Variables",
-    "text": "Variables\nAn observation in the dataset consists of a word, and its placement in the document.\n\n\nRows: 151,370\nColumns: 1\n$ Words &lt;chr&gt; \"Magic:\", \"The\", \"Gathering\", \"Comprehensive\", \"Rules\", \"These\",…"
+    "text": "Variables\nAn observation in the dataset consists of a word, and its placement in the document."
   },
   {
     "objectID": "presentation.html#results",
     "href": "presentation.html#results",
     "title": "An Analysis of MTG’s Comprehensive Rulebook",
     "section": "Results",
-    "text": "Results\nhi"
+    "text": "Results\n\nApp Example"
+  },
+  {
+    "objectID": "presentation.html#questions",
+    "href": "presentation.html#questions",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Questions?",
+    "text": "Questions?"
+  },
+  {
+    "objectID": "presentation.html#future-research",
+    "href": "presentation.html#future-research",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Future Research",
+    "text": "Future Research\n\n\nData on the cards themselves.\nFrequency with respect to Rules Change."
+  },
+  {
+    "objectID": "presentation.html#final-product",
+    "href": "presentation.html#final-product",
+    "title": "An Analysis of MTG’s Comprehensive Rulebook",
+    "section": "Final Product",
+    "text": "Final Product\n\nApp Example"
   }
 ]

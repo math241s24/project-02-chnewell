@@ -114,22 +114,28 @@ mtgtext <- str_split(mtgtext[1], "\\s+") %>% pluck(1)
 mtg_df <- as.data.frame(mtgtext)
 names(mtg_df) <- "Words"
 
-mtg_df
+view(mtg_df)
 
 ```
 
-## Results
+## Final Product
 
-::: {.absolute top="220" left="0" width="300" height="250"}
 ![App Example](img/app_example)
+
+## Future Research
+
+::: incremental
+1. Data on the cards themselves.
+
+2. Frequency with respect to Rules Change.
 :::
+
 
 ## Questions?
 
 
 ## Testing Data Scraping {.smaller}
 
-test testing test
 
-![Test Image](img/download_1)
+![Corder Bollie Corder Bollie](img/download_1)
 
