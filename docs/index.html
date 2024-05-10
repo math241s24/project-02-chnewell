@@ -207,7 +207,7 @@ $ word_count &lt;int&gt; 15, 750, 11, 5, 24, 84, 305, 2, 3, 5, 2, 1, 265, 2, 1, 
 </div>
 </div>
 <p>From this graphic for pool, we can see that the most common term close to it is ‘mana’. This makes sense, because in the game, ‘mana pool’ is a common phrase.</p>
-<p>Another example would be the keyword poison. The phrase most used with this would be ‘poison counter’, so ‘counter’ should be the top term on this graphic.</p>
+<p>Another example would be the keyword poison, with an area of search of 20. The phrase most used with this would be ‘poison counter’, so ‘counter’ should be the top term on this graphic.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "See rule 104.3d"
@@ -221,19 +221,27 @@ $ word_count &lt;int&gt; 15, 750, 11, 5, 24, 84, 305, 2, 3, 5, 2, 1, 265, 2, 1, 
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Interestingly enough, it appears that ‘player’ is the most common term. This example underlines the importance of the area of search. While ‘poison counter’ might be the most common term, the rules might reference the player many times for every mention of ‘poison’, and since the area of search we chose was 40, it will return that as higher.</p>
+<p>Interestingly enough, it appears that ‘player’ is the most common term. This example underlines the importance of the area of search. While ‘poison counter’ might be the most common term, the rules might reference the player many times for every mention of ‘poison’, and since the area of search we chose was 20, it will return that as higher.</p>
 <p>Changing the area of search to 1 gives this graphic.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>The player is referenced more than counters when talking about poison, but the ‘counter’ keyword is referenced closer to ‘poison’ than ‘player’ is.</p>
 </section>
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>The keywords referenced more than 260 times in the rules are as follows are here:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>Some keywords go hand in hand with other keywords, and the graphics prove that. Interestingly enough, however, some more common keywords like ‘player’ and ‘ability’ are not as homogeneous in their placement in the rules as one would think. Some keywords have many more of a certain ‘common’ keyword than others.</p>
 
 
 </section>
