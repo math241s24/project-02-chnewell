@@ -24,20 +24,9 @@ library(stringr)
 
 ## Dataset
 
-```{r load-data}
-#| label: load-data
-#| message: false
-
-mtg_rules_url <- "https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt"
-mtg_rules <- RCurl::getURL(mtg_rules_url) %>% str_split("\r\n") %>%
-  pluck(1)
-glimpse(mtg_rules)
-
-```
-
 The data set is the official text document of the MTG rules, published by WOTC.
 
-```{r}
+```{r, echo:false}
 url <- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'
 mtgtext <- gettxt(url)
 mtgtext <- str_split(mtgtext[1], "\\s+") %>% pluck(1)

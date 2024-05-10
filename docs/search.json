@@ -4,14 +4,14 @@
     "href": "proposal.html",
     "title": "Project 2",
     "section": "",
-    "text": "mtg_rules_url &lt;- \"https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt\"\nmtg_rules &lt;- RCurl::getURL(mtg_rules_url) %&gt;% str_split(\"\\r\\n\") %&gt;%\n  pluck(1)\nglimpse(mtg_rules)\n\n chr [1:13] \"ï»¿Magic: The Gathering Comprehensive Rules\\r\\rThese rules are effective as of March 8, 2024.\\r\\rIntroduction\\r\"| __truncated__ ...\n\n\nThe data set is the official text document of the MTG rules, published by WOTC."
+    "text": "The data set is the official text document of the MTG rules, published by WOTC.\n\nurl &lt;- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'\nmtgtext &lt;- gettxt(url)\nmtgtext &lt;- str_split(mtgtext[1], \"\\\\s+\") %&gt;% pluck(1)\n\nmtg_df &lt;- as.data.frame(mtgtext)\nnames(mtg_df) &lt;- \"Words\""
   },
   {
     "objectID": "proposal.html#dataset",
     "href": "proposal.html#dataset",
     "title": "Project 2",
     "section": "",
-    "text": "mtg_rules_url &lt;- \"https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt\"\nmtg_rules &lt;- RCurl::getURL(mtg_rules_url) %&gt;% str_split(\"\\r\\n\") %&gt;%\n  pluck(1)\nglimpse(mtg_rules)\n\n chr [1:13] \"ï»¿Magic: The Gathering Comprehensive Rules\\r\\rThese rules are effective as of March 8, 2024.\\r\\rIntroduction\\r\"| __truncated__ ...\n\n\nThe data set is the official text document of the MTG rules, published by WOTC."
+    "text": "The data set is the official text document of the MTG rules, published by WOTC.\n\nurl &lt;- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'\nmtgtext &lt;- gettxt(url)\nmtgtext &lt;- str_split(mtgtext[1], \"\\\\s+\") %&gt;% pluck(1)\n\nmtg_df &lt;- as.data.frame(mtgtext)\nnames(mtg_df) &lt;- \"Words\""
   },
   {
     "objectID": "proposal.html#reason-for-choosing-this-dataset",
@@ -37,23 +37,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Project 2",
+    "title": "",
     "section": "",
     "text": "I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings."
   },
   {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
-    "title": "Project 2",
+    "title": "",
     "section": "",
     "text": "I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings."
   },
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
-    "title": "Project 2",
+    "title": "",
     "section": "Introduction",
-    "text": "Introduction\nThe MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated."
+    "text": "Introduction\nMagic the Gathering is a children’s card game. You play cards according to costs in order to win. In order to conserve text space, rules on cards are shortened to keywords. All of these keywords are defined in the official rules book.\n\n\n\nStorm Crow\n\n\nHowever, there’s a problem. Magic the Gathering has been running since 1994, and at this point the MTG rulebook is about 250 pages. Understanding the rules completely is very difficult even for experienced players.\nThe goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated."
   },
   {
     "objectID": "presentation.html#main-research-question",
@@ -166,5 +166,47 @@
     "title": "An Analysis of MTG’s Comprehensive Rulebook",
     "section": "Final Product",
     "text": "Final Product\n\nApp Example"
+  },
+  {
+    "objectID": "index.html#topic-of-research",
+    "href": "index.html#topic-of-research",
+    "title": "",
+    "section": "Topic of Research",
+    "text": "Topic of Research\nThe goal of my project is to make an application visualizing quantity and correlation through an interactive search method for the MTG rulings. Once a keyword is chosen, the application will give:\n\nA list of sections in the rules that the keyword resides.\nA graph of some number of keywords close in proximity to the searched keyword."
+  },
+  {
+    "objectID": "index.html#the-data",
+    "href": "index.html#the-data",
+    "title": "",
+    "section": "The Data",
+    "text": "The Data\nThe data consists of the scraped text from the official online rules.\nData wrangling has included removing all the conjunctions that occur. An observation in the dataset consists of a word, the number of times it occurs in the dataset, and its placement in the document.\nBecause of the nature of the application, ordering the data by number of occurrences would make it impossible to find the original placement of keywords in the original rules.\n\n\nRows: 84,237\nColumns: 2\nGroups: word [12,689]\n$ word       &lt;chr&gt; \"Magic:\", \"The\", \"Gathering\", \"Comprehensive\", \"Rules\", \"Th…\n$ word_count &lt;int&gt; 15, 750, 11, 5, 24, 84, 305, 2, 3, 5, 2, 1, 265, 2, 1, 1, 1…"
+  },
+  {
+    "objectID": "index.html#approach",
+    "href": "index.html#approach",
+    "title": "",
+    "section": "Approach",
+    "text": "Approach\nFor"
+  },
+  {
+    "objectID": "index.html#visualization-of-graphic",
+    "href": "index.html#visualization-of-graphic",
+    "title": "",
+    "section": "Visualization of Graphic",
+    "text": "Visualization of Graphic"
+  },
+  {
+    "objectID": "index.html#analysis",
+    "href": "index.html#analysis",
+    "title": "",
+    "section": "Analysis",
+    "text": "Analysis"
+  },
+  {
+    "objectID": "index.html#discussion",
+    "href": "index.html#discussion",
+    "title": "",
+    "section": "Discussion",
+    "text": "Discussion"
   }
 ]

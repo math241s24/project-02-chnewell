@@ -8,12 +8,166 @@ execute:
   echo: false
   warning: false
   message: false
+
 ---
+```{r, echo: false}
+library(tidyverse)
+library(dplyr)
+library(rvest)
+library(httr)
+library(readr)
+library(RColorBrewer)
+library(tidyr)
+library(shiny)
+library(DT)
+library(tidytext)
+library(knitr)
+library(janeaustenr) 
+library(RCurl)
+library(htm2txt)
+library(stringr)
+```
 
 ## Abstract
 
 I want to make a visualization of quantity and correlation through an interactive search method for the MTG rulings.
 
 ## Introduction
+Magic the Gathering is a children's card game. You play cards according to costs in order to win. In order to conserve text space, rules on cards are shortened to keywords. All of these keywords are defined in the official rules book.
 
-The MTG rulebook is about 250 pages. Understanding the rules completely is hard enough as it is. The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated.
+![Storm Crow](img/mtg_example_highlight)
+
+However, there's a problem. Magic the Gathering has been running since 1994, and at this point the MTG rulebook is about 250 pages. Understanding the rules completely is very difficult even for experienced players.
+
+The goal of this project is to make a tool that will display trends and patterns in the rules, to better understand what mechanics in the rules are correlated.
+
+## Topic of Research
+
+The goal of my project is to make an application visualizing quantity and correlation through an interactive search method for the MTG rulings. Once a keyword is chosen, the application will give:
+
+1.  A list of sections in the rules that the keyword resides.
+
+2.  A graph of some number of keywords close in proximity to the searched keyword.
+
+## The Data
+
+The data consists of the scraped text from the official online rules.
+
+Data wrangling has included removing all the conjunctions that occur. An observation in the dataset consists of a word, the number of times it occurs in the dataset, and its placement in the document.
+
+Because of the nature of the application, ordering the data by number of occurrences would make it impossible to find the original placement of keywords in the original rules.
+
+```{r}
+url <- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'
+mtgtext <- gettxt(url)
+mtgtext <- str_split(mtgtext[1], "\\s+") %>% pluck(1)
+
+mtg_df <- as.data.frame(mtgtext)
+names(mtg_df) <- "word"
+
+data("stop_words")
+
+mtg_df <- mtg_df %>%
+  anti_join(stop_words) %>%
+  group_by(word) %>%
+  mutate(word_count = n())
+
+glimpse(mtg_df)
+```
+
+## Approach
+
+For 
+
+## Visualization of Graphic
+
+```{r, echo=FALSE}
+
+word_to_test <- "pool"
+area_of_search <- 40
+
+indices <- which(mtg_df == word_to_test)
+
+array_of_words <- character(length(indices)*2*area_of_search)
+
+for (x in 1:length(indices)) {
+  for (j in -area_of_search:area_of_search){
+    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  }
+}
+
+df_of_words <- data.frame(words = array_of_words) %>%
+  filter(words != "")
+
+
+df_of_words %>%
+  count(words, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
+
+```
+
+```{r, echo=FALSE}
+
+word_to_test <- "cumulative"
+area_of_search <- 40
+
+indices <- which(mtg_df == word_to_test)
+
+array_of_words <- character(length(indices)*2*area_of_search)
+
+for (x in 1:length(indices)) {
+  for (j in -area_of_search:area_of_search){
+    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  }
+}
+
+df_of_words <- data.frame(words = array_of_words) %>%
+  filter(words != "")
+
+
+df_of_words %>%
+  count(words, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
+
+```
+
+```{r, echo=FALSE}
+
+word_to_test <- "poison"
+area_of_search <- 20
+
+indices <- which(mtg_df == word_to_test)
+
+array_of_words <- character(length(indices)*2*area_of_search)
+
+for (x in 1:length(indices)) {
+  for (j in -area_of_search:area_of_search){
+    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  }
+}
+
+df_of_words <- data.frame(words = array_of_words) %>%
+  filter(words != "")
+
+
+df_of_words %>%
+  count(words, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
+
+```
+
+
+## Analysis
+
+## Discussion
+
+
