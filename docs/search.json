@@ -208,5 +208,12 @@
     "title": "",
     "section": "Discussion",
     "text": "Discussion"
+  },
+  {
+    "objectID": "index.html#approach-and-visualization",
+    "href": "index.html#approach-and-visualization",
+    "title": "",
+    "section": "Approach and Visualization",
+    "text": "Approach and Visualization\nLet’s say that the keyword ‘pool’ was searched, with an area of search of 40. The app will then return the top 5 places in the rules that describe this keyword, and then will create a graphic of the top 15 words that are of at most 40 word distance from any mention of the keyword.\n\n\n[1] \"See rule 100.4b\"\n[1] \"See rule 100.4c\"\n[1] \"See rule 100.4d\"\n[1] \"See rule 106.4.\"\n[1] \"See rule 106.4.\"\n[1] \"See rule 106.4a\"\n\n\n\n\n\nFrom this graphic for pool, we can see that the most common term close to it is ‘mana’. This makes sense, because in the game, ‘mana pool’ is a common phrase.\nAnother example would be the keyword poison. The phrase most used with this would be ‘poison counter’, so ‘counter’ should be the top term on this graphic.\n\n\n[1] \"See rule 104.3d\"\n[1] \"See rule 120.3b\"\n[1] \"See rule 120.3g\"\n[1] \"See rule 122.1f\"\n[1] \"See rule 704.\"\n[1] \"See rule 701.27b\"\n\n\n\n\n\nInterestingly enough, it appears that ‘player’ is the most common term. This example underlines the importance of the area of search. While ‘poison counter’ might be the most common term, the rules might reference the player many times for every mention of ‘poison’, and since the area of search we chose was 40, it will return that as higher.\nChanging the area of search to 1 gives this graphic."
   }
 ]

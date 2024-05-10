@@ -124,8 +124,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#topic-of-research" id="toc-topic-of-research" class="nav-link" data-scroll-target="#topic-of-research">Topic of Research</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
-  <li><a href="#visualization-of-graphic" id="toc-visualization-of-graphic" class="nav-link" data-scroll-target="#visualization-of-graphic">Visualization of Graphic</a></li>
+  <li><a href="#approach-and-visualization" id="toc-approach-and-visualization" class="nav-link" data-scroll-target="#approach-and-visualization">Approach and Visualization</a></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
@@ -191,22 +190,39 @@ $ word_count &lt;int&gt; 15, 750, 11, 5, 24, 84, 305, 2, 3, 5, 2, 1, 265, 2, 1, 
 </div>
 </div>
 </section>
-<section id="approach" class="level2">
-<h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>For</p>
-</section>
-<section id="visualization-of-graphic" class="level2">
-<h2 class="anchored" data-anchor-id="visualization-of-graphic">Visualization of Graphic</h2>
+<section id="approach-and-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="approach-and-visualization">Approach and Visualization</h2>
+<p>Let’s say that the keyword ‘pool’ was searched, with an area of search of 40. The app will then return the top 5 places in the rules that describe this keyword, and then will create a graphic of the top 15 words that are of at most 40 word distance from any mention of the keyword.</p>
 <div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "See rule 100.4b"
+[1] "See rule 100.4c"
+[1] "See rule 100.4d"
+[1] "See rule 106.4."
+[1] "See rule 106.4."
+[1] "See rule 106.4a"</code></pre>
+</div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>From this graphic for pool, we can see that the most common term close to it is ‘mana’. This makes sense, because in the game, ‘mana pool’ is a common phrase.</p>
+<p>Another example would be the keyword poison. The phrase most used with this would be ‘poison counter’, so ‘counter’ should be the top term on this graphic.</p>
 <div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "See rule 104.3d"
+[1] "See rule 120.3b"
+[1] "See rule 120.3g"
+[1] "See rule 122.1f"
+[1] "See rule 704."
+[1] "See rule 701.27b"</code></pre>
+</div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Interestingly enough, it appears that ‘player’ is the most common term. This example underlines the importance of the area of search. While ‘poison counter’ might be the most common term, the rules might reference the player many times for every mention of ‘poison’, and since the area of search we chose was 40, it will return that as higher.</p>
+<p>Changing the area of search to 1 gives this graphic.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>

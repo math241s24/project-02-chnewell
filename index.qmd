@@ -75,11 +75,9 @@ mtg_df <- mtg_df %>%
 glimpse(mtg_df)
 ```
 
-## Approach
+## Approach and Visualization
 
-For 
-
-## Visualization of Graphic
+Let's say that the keyword 'pool' was searched, with an area of search of 40. The app will then return the top 5 places in the rules that describe this keyword, and then will create a graphic of the top 15 words that are of at most 40 word distance from any mention of the keyword.
 
 ```{r, echo=FALSE}
 
@@ -99,34 +97,23 @@ for (x in 1:length(indices)) {
 df_of_words <- data.frame(words = array_of_words) %>%
   filter(words != "")
 
-
-df_of_words %>%
-  count(words, sort = TRUE) %>%
-  slice_head(n = 15) %>%
-  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
-  geom_col() +
-  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
-
-```
-
-```{r, echo=FALSE}
-
-word_to_test <- "cumulative"
-area_of_search <- 40
-
-indices <- which(mtg_df == word_to_test)
-
-array_of_words <- character(length(indices)*2*area_of_search)
-
 for (x in 1:length(indices)) {
-  for (j in -area_of_search:area_of_search){
-    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  i = indices[x]
+  place_in_rules = 0
+  
+  while(i > 5){
+    if(grepl("\\b\\d+(\\.\\d+[a-z]?)?[,.]?\\b", mtg_df$word[i])){
+      place_in_rules = i
+      i = 4
+    }
+    i = i - 1
+  }
+  print(paste("See rule", mtg_df$word[place_in_rules]))
+  if(x > 5){
+    break
   }
 }
 
-df_of_words <- data.frame(words = array_of_words) %>%
-  filter(words != "")
-
 
 df_of_words %>%
   count(words, sort = TRUE) %>%
@@ -135,7 +122,13 @@ df_of_words %>%
   geom_col() +
   guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
 
+
 ```
+
+From this graphic for pool, we can see that the most common term close to it is 'mana'. This makes sense, because in the game, 'mana pool' is a common phrase.
+
+
+Another example would be the keyword poison, with an area of search of 20. The phrase most used with this would be 'poison counter', so 'counter' should be the top term on this graphic.
 
 ```{r, echo=FALSE}
 
@@ -155,6 +148,23 @@ for (x in 1:length(indices)) {
 df_of_words <- data.frame(words = array_of_words) %>%
   filter(words != "")
 
+for (x in 1:length(indices)) {
+  i = indices[x]
+  place_in_rules = 0
+  
+  while(i > 5){
+    if(grepl("\\b\\d+(\\.\\d+[a-z]?)?[,.]?\\b", mtg_df$word[i])){
+      place_in_rules = i
+      i = 4
+    }
+    i = i - 1
+  }
+  print(paste("See rule", mtg_df$word[place_in_rules]))
+  if(x > 5){
+    break
+  }
+}
+
 
 df_of_words %>%
   count(words, sort = TRUE) %>%
@@ -165,9 +175,56 @@ df_of_words %>%
 
 ```
 
+Interestingly enough, it appears that 'player' is the most common term. This example underlines the importance of the area of search. While 'poison counter' might be the most common term, the rules might reference the player many times for every mention of 'poison', and since the area of search we chose was 20, it will return that as higher.
+
+Changing the area of search to 1 gives this graphic.
+
+```{r, echo=FALSE}
+
+word_to_test <- "poison"
+area_of_search <- 1
+
+indices <- which(mtg_df == word_to_test)
+
+array_of_words <- character(length(indices)*2*area_of_search)
+
+for (x in 1:length(indices)) {
+  for (j in -area_of_search:area_of_search){
+    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  }
+}
+
+df_of_words <- data.frame(words = array_of_words) %>%
+  filter(words != "")
+
+
+df_of_words %>%
+  count(words, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
+
+```
+
+The player is referenced more than counters when talking about poison, but the 'counter' keyword is referenced closer to 'poison' than 'player' is.
+
 
 ## Analysis
 
+The keywords referenced more than 260 times in the rules are as follows are here:
+
+```{r}
+filtered_mtg_df <- mtg_df[!duplicated(mtg_df$word), ]
+filtered_mtg_df <- filtered_mtg_df %>%
+  filter(word_count > 260) %>%
+  arrange(desc(word_count))
+
+ggplot(filtered_mtg_df, aes(y = reorder(word, word_count), x = word_count)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = "Top Keywords")
+```
+
 ## Discussion
 
-
+Some keywords go hand in hand with other keywords, and the graphics prove that. Interestingly enough, however, some more common keywords like 'player' and 'ability' are not as homogeneous in their placement in the rules as one would think. Some keywords have many more of a certain 'common' keyword than others.
