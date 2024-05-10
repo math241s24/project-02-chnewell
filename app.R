@@ -1,9 +1,29 @@
 library(shiny)
 library(tidyverse)
-library(babynames)
 library(DT)
+library(tidytext)
+library(knitr)
+library(janeaustenr) 
+library(dplyr)
+library(RCurl)
+library(htm2txt)
+library(stringr)
+
+library(babynames)
 
 # User interface
+
+
+url <- 'https://media.wizards.com/2024/downloads/MagicCompRules%2020240308.txt'
+mtgtext <- gettxt(url)
+mtgtext <- str_split(mtgtext[1], "\\s+") %>% pluck(1)
+
+mtg_df <- as.data.frame(mtgtext)
+names(mtg_df) <- "Words"
+
+
+
+
 
 ui <- fluidPage(
   titlePanel("Which Math 241 name is most popular?"),
