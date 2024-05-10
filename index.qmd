@@ -225,6 +225,53 @@ ggplot(filtered_mtg_df, aes(y = reorder(word, word_count), x = word_count)) +
   guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = "Top Keywords")
 ```
 
+The top 5 main ones are 'player', 'rule', 'ability', 'card', and 'creature'. It looks like the graph follows an asymptotic decay curve, which is very cool and what would be expected.
+
+```{r, echo=FALSE, eval=FALSE}
+
+word_to_test <- "player"
+area_of_search <- 4
+
+indices <- which(mtg_df == word_to_test)
+
+array_of_words <- character(length(indices)*2*area_of_search)
+
+for (x in 1:length(indices)) {
+  for (j in -area_of_search:area_of_search){
+    array_of_words[(j+area_of_search)*x] <- mtg_df$word[indices[x] + j]
+  }
+}
+
+filtered_mtg_df <- mtg_df[!duplicated(mtg_df$word), ]
+length_of_array = length(array_of_words)
+
+df_of_words <- data.frame(words = array_of_words) %>%
+  filter(words != "") %>%
+  group_by(words) %>%
+  mutate(ratio_count = n())
+  
+  
+
+for(x in 1:length_of_array){
+  placement = which(mtg_df$word == df_of_words$words[x])
+  ratio = (df_of_words$ratio_count[x])/(mtg_df$word[placement])
+  df_of_words$ratio_count[x] = ratio
+}
+
+
+df_of_words %>%
+  count(words, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(y = fct_reorder(words, n), x = n, fill = n)) +
+  geom_col() +
+  guides(fill = FALSE) + labs(y = "Most Common Words", x = "Count", title = word_to_test)
+
+```
+
 ## Discussion
 
 Some keywords go hand in hand with other keywords, and the graphics prove that. Interestingly enough, however, some more common keywords like 'player' and 'ability' are not as homogeneous in their placement in the rules as one would think. Some keywords have many more of a certain 'common' keyword than others.
+
+
+
+Unfortunately, I was unable to get the application working. The code works, and the application window opens, but they don't mesh together. This would be a necessary next step should I continue this into the future.
