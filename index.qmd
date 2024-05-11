@@ -253,8 +253,8 @@ df_of_words <- data.frame(words = array_of_words) %>%
   
 
 for(x in 1:length_of_array){
-  placement = which(mtg_df$word == df_of_words$words[x])
-  ratio = (df_of_words$ratio_count[x])/(mtg_df$word[placement])
+  placement = which(filtered_mtg_df$word == df_of_words$words[x])
+  ratio = (df_of_words$ratio_count[x])/sum(filtered_mtg_df$word_count[placement])
   df_of_words$ratio_count[x] = ratio
 }
 
